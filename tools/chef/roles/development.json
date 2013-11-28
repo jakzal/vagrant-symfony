@@ -1,0 +1,24 @@
+{
+  "name": "development",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "Development configuration and tools",
+  "run_list" : [
+    "recipe[git]"
+   ],
+  "default_attributes": {
+    "php": {
+      "packages": [
+        "php5-xdebug"
+      ],
+      "directives" : {
+        "error_reporting": "E_ALL | E_STRICT",
+        "display_errors": "On",
+        "xdebug.remote_enable" : 1,
+        "xdebug.idekey": "phpstorm",
+        "xdebug.remote_host": "10.10.20.1"
+      }
+    }
+  }
+}
+

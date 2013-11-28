@@ -1,0 +1,29 @@
+{
+  "name": "webserver",
+  "description": "Basic configuration of a webserver",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "apache": {
+      "default_modules": ["mod_php5"]
+    },
+    "php": {
+      "version" : "5.5",
+      "packages": [
+        "php5-curl",
+        "php5-imagick",
+        "php5-intl"
+      ],
+      "directives" : {
+        "date.timezone": "UTC"
+      }
+    }
+  },
+  "run_list": [
+    "recipe[apt]",
+    "recipe[apache2]",
+    "recipe[php]",
+    "recipe[composer]"
+  ]
+}
+

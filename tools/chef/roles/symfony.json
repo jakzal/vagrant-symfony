@@ -1,0 +1,10 @@
+{
+  "name": "symfony",
+  "description": "Configuration for a symfony project",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "run_list": [
+    "recipe[symfony]"
+  ]
+}
+
