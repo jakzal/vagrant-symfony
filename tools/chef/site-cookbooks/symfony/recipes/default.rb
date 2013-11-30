@@ -4,6 +4,8 @@ web_app "symfony.dev" do
   server_aliases [node['fqdn'], "sf.dev"]
   docroot "/home/vagrant/symfony.dev/web"
   allow_override "All"
-  cookbook "apache2"
+  directory_index "app_dev.php"
+  cookbook "symfony"
+  template "symfony.conf.erb"
 end
 
