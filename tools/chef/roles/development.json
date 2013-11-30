@@ -12,11 +12,12 @@
         "php5-xdebug"
       ],
       "directives" : {
-        "error_reporting": "E_ALL | E_STRICT",
+        "error_reporting": 32767,
         "display_errors": "On",
         "xdebug.remote_enable" : 1,
         "xdebug.idekey": "phpstorm",
-        "xdebug.remote_host": "10.10.20.1"
+        "xdebug.remote_host": "10.10.20.1",
+        "xdebug.max_nesting_level": "250"
       }
     }
   }

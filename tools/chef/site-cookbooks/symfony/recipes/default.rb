@@ -31,3 +31,7 @@ web_app node[:symfony][:domain] do
   cookbook "symfony"
   template "symfony.conf.erb"
 end
+
+link "/etc/php5/apache2/php.ini" do
+  to "/etc/php5/cli/php.ini"
+end

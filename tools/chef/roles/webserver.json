@@ -8,14 +8,16 @@
       "default_modules": ["mod_php5"]
     },
     "php": {
-      "version" : "5.5",
       "packages": [
+        "php-apc",
         "php5-curl",
         "php5-imagick",
-        "php5-intl"
+        "php5-intl",
+        "php5-mysql"
       ],
       "directives" : {
-        "date.timezone": "UTC"
+        "date.timezone": "UTC",
+        "short_open_tag": "Off"
       }
     }
   },
