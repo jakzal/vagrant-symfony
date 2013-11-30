@@ -1,3 +1,5 @@
+ip = node[:network][:interfaces][:eth1][:addresses].detect{|k,v| v[:family] == "inet" }.first
+remote_ip = ip.gsub /\.\d+$/, '.1'
 
 execute "composer create-project" do
   command <<-EOF
@@ -8,6 +10,7 @@ execute "composer create-project" do
     mv /tmp/symfony.dev/.travis.yml #{node[:symfony][:project_path]}/
     cat /tmp/symfony.dev/.gitignore >> #{node[:symfony][:project_path]}/.gitignore
     rm -rf /tmp/symfony.dev
+    sed -i "s/\\('::1'\\))/\\1, '#{remote_ip}')/" #{node[:symfony][:project_path]}/web/app_dev.php
   EOF
   action :run
   creates "#{node[:symfony][:project_path]}/composer.json"
