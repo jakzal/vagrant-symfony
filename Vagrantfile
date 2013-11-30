@@ -1,5 +1,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
+vm_ip = "10.10.20.2"
+
 Vagrant.require_plugin "vagrant-librarian-chef"
 Vagrant.require_plugin "vagrant-omnibus"
 Vagrant.require_plugin "vagrant-hostsupdater"
@@ -13,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.customize ["modifyvm", :id, "--memory", "1024"]
   end
 
-  config.vm.network :private_network, ip: "10.10.20.2"
+  config.vm.network :private_network, ip: vm_ip
   config.vm.hostname = "symfony.dev"
   config.hostsupdater.aliases = ["sf.dev"]
 
