@@ -26,4 +26,9 @@
   RewriteEngine On
   RewriteLog <%= node['apache']['log_dir'] %>/<%= @application_name %>-rewrite.log
   RewriteLogLevel 0
+
+  RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_FILENAME} -f
+  RewriteRule .? - [L]
+
+  RewriteRule .? /<%= node['symfony']['default_front_controller'] %> [L]
 </VirtualHost>
