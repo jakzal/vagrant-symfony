@@ -7,6 +7,7 @@ project_aliases = ["sf.dev"]
 
 Vagrant.require_plugin "vagrant-librarian-chef"
 Vagrant.require_plugin "vagrant-omnibus"
+Vagrant.require_plugin "vagrant-vbguest"
 Vagrant.require_plugin "vagrant-hostsupdater"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
