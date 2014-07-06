@@ -5,10 +5,6 @@ vm_project_path = "/home/vagrant/symfony.dev"
 project_domain = "symfony.dev"
 project_aliases = ["sf.dev"]
 
-Vagrant.require_plugin "vagrant-librarian-chef"
-Vagrant.require_plugin "vagrant-omnibus"
-Vagrant.require_plugin "vagrant-hostsupdater"
-
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
