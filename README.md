@@ -1,6 +1,8 @@
 Basic vagrant and chef configuration for Symfony projects
 =========================================================
 
+**Abandoned**. If I really had to use vagrant, I'd rather use Ansible then chef these days. Anyway, I've moved on to docker. 
+
 Quick Start
 -----------
 
